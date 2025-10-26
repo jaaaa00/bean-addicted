@@ -3,6 +3,17 @@
   background-color: #000;
 }
 
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;

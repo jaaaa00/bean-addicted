@@ -8,6 +8,26 @@ import AboutSectionBG from "../../Bean_Files/AboutBG.png";
 import BGImage from "../../Bean_Files/BG.jpg";
 
 function Home() {
+    useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+        }
+      });
+    }, observerOptions);
+
+    const elementsToAnimate = document.querySelectorAll('.fade-in-on-scroll');
+    elementsToAnimate.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -32,7 +52,7 @@ function Home() {
 
       {/* About Section */}
 <section
-  className="about-section"
+  className="about-section fade-in-on-scroll"
   style={{ backgroundImage: `url(${AboutSectionBG})` }}
 >
 
@@ -77,7 +97,7 @@ function Home() {
       </section>
 
  {/* Location Section */}
-<section className="location-section">
+<section className="location-section fade-in-on-scroll">
   <div className="location-container">
     <h2 className="location-title">where to find us?</h2>
     <p className="location-subtitle">our store locations</p>
@@ -200,7 +220,7 @@ function Home() {
 
    {/* Contact Section */}
 <section className="contact-section" id="contact">
-  <div className="contact-container">
+  <div className="contact-container" fade-in-on-scroll>
     <div className="contact-left">
 <h2 className="contact-title">Contact Us</h2>
 <p className="contact-subtitle">
