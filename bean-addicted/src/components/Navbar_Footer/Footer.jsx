@@ -1,5 +1,6 @@
 import './Footer.css';
 import BeanAddictedLogo from '../Bean_Files/BeanAddictedLogo.png';
+import BeanAddictedFootLogo from '../Bean_Files/BeanAddictedFootLogo.png';
 
 function Footer() {
   return (
@@ -8,9 +9,9 @@ function Footer() {
         <div className="footer-left">
           <div className="footer-logo">
             <div className="footer-logo-circle">
-              <img src={BeanAddictedLogo} alt="Bean Addicted Logo" className="footer-logo-img" />
+              <img src={BeanAddictedFootLogo} alt="Bean Addicted Logo" className="footer-logo-img" />
             </div>
-            <span className="footer-logo-text">BEAN ADDICTED</span>
+     
             <div className="footer-socials">
               <a
                 href="https://www.facebook.com/profile.php?id=100089928705478"
